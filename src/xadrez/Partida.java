@@ -1,12 +1,18 @@
 package xadrez;
 
+import pieces.Rei;
+import pieces.Torre;
+import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
+
+import java.awt.*;
 
 public class Partida {
     private Tabuleiro tabuleiro;
 
     public Partida(){
         tabuleiro = new Tabuleiro(8,8);
+        inicioPartida();
     }
 
     public PecaXadrez[][] getPecas(){
@@ -18,5 +24,10 @@ public class Partida {
             }
         }
         return matriz;
+    }
+
+    private void inicioPartida(){
+        tabuleiro.atribuirPeca(new Torre(tabuleiro, Cor.BRANCA), new Posicao(0,4));
+        tabuleiro.atribuirPeca(new Rei(tabuleiro, Cor.PRETA), new Posicao(3,3));
     }
 }
