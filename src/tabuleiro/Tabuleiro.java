@@ -76,7 +76,7 @@ public class Tabuleiro {
     }
 
     public PecaXadrez realizarMovimento(Posicao origem, Posicao destino){
-        Peca pecaMovida = removerPeca(origem)
+        Peca pecaMovida = removerPeca(origem);
         Peca pecaCapturada = removerPeca(destino);
         atribuirPeca(pecaMovida, destino);
         return (PecaXadrez) pecaCapturada;
