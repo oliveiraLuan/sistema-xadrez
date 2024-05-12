@@ -61,27 +61,6 @@ public class Tabuleiro {
         return peca;
     }
 
-    public PecaXadrez moverPeca(PosicaoXadrez origem, PosicaoXadrez destino){
-        Posicao posicaoOrigem = new Posicao(origem.getLinha(), origem.getColuna());
-        Posicao posicaoDestino = new Posicao(origem.getLinha(), origem.getColuna());
-        validarMovimento(posicaoOrigem);
-        Peca pecaCapturada = realizarMovimento(posicaoOrigem, posicaoDestino);
-        return (PecaXadrez) pecaCapturada;
-    }
-
-    public void validarMovimento(Posicao origem){
-        if(!posicaoExistente(origem)){
-            throw new XadrezException("Peça inexistente na posição informada.");
-        }
-    }
-
-    public PecaXadrez realizarMovimento(Posicao origem, Posicao destino){
-        Peca pecaMovida = removerPeca(origem);
-        Peca pecaCapturada = removerPeca(destino);
-        atribuirPeca(pecaMovida, destino);
-        return (PecaXadrez) pecaCapturada;
-    }
-
     private Boolean posicaoExistente(int linha, int coluna){
         return linha >= 0 && linha < linhas && coluna >=0 && coluna < colunas;
     }
