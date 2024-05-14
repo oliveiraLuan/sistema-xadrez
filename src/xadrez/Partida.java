@@ -34,8 +34,8 @@ public class Partida {
     }
 
     public PecaXadrez moverPeca(PosicaoXadrez origem, PosicaoXadrez destino){
-        Posicao posicaoOrigem = new Posicao(origem.getLinha(), origem.getColuna());
-        Posicao posicaoDestino = new Posicao(origem.getLinha(), origem.getColuna());
+        Posicao posicaoOrigem = origem.paraPosicao();
+        Posicao posicaoDestino = destino.paraPosicao();
         validarMovimento(posicaoOrigem);
         Peca pecaCapturada = realizarMovimento(posicaoOrigem, posicaoDestino);
         return (PecaXadrez) pecaCapturada;

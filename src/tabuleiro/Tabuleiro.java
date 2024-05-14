@@ -52,7 +52,7 @@ public class Tabuleiro {
         if(!posicaoExistente(posicao)){
             throw new TabuleiroException("Posição de peça inexistente.");
         }
-        if(posicao == null){
+        if(getPeca(posicao) == null){
             return null;
         }
         Peca peca = getPeca(posicao);
