@@ -18,4 +18,13 @@ public class PecaXadrez extends Peca {
         PecaXadrez outraPeca = (PecaXadrez) getTabuleiro().getPeca(posicao);
         return outraPeca != null && this.cor != outraPeca.getCor();
     }
+
+    @Override
+    public Boolean[][] movimentosPossiveis() {
+        Boolean[][] matriz = new Boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
+
+
+
+        return matriz;
+    }
 }
