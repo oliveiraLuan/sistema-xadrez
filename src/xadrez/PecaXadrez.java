@@ -4,7 +4,7 @@ import tabuleiro.Peca;
 import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
 
-public class PecaXadrez extends Peca {
+public abstract class PecaXadrez extends Peca {
     private Cor cor;
     public PecaXadrez(Tabuleiro tabuleiro, Cor cor) {
         super(tabuleiro);
@@ -17,14 +17,5 @@ public class PecaXadrez extends Peca {
     protected Boolean existePecaAdversaria(Posicao posicao){
         PecaXadrez outraPeca = (PecaXadrez) getTabuleiro().getPeca(posicao);
         return outraPeca != null && this.cor != outraPeca.getCor();
-    }
-
-    @Override
-    public Boolean[][] movimentosPossiveis() {
-        Boolean[][] matriz = new Boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
-
-
-
-        return matriz;
     }
 }
